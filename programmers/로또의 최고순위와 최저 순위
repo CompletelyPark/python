@@ -1,0 +1,24 @@
+def solution(l, w):
+    answer = []
+    l.sort()
+    w.sort()
+    # print(l, w)
+    lst = []
+
+    for i in range(6):
+        for j in range(6):
+            if l[i] == w[j]:
+                lst.append(l[i])
+
+    x = l.count(0) + len(lst)
+    y = len(lst)
+    if x == 0:
+        x = 1
+    if y == 0:
+        y = 1
+    # print(x, y)
+    answer.append(6-x+1)
+    answer.append(6-y+1)
+
+    print(answer)
+    return answer
